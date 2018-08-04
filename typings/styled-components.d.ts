@@ -95,7 +95,7 @@ export function withTheme<P extends { theme?: T; }, T>(component: React.Componen
 export function keyframes(strings: TemplateStringsArray, ...interpolations: SimpleInterpolation[]): string;
 export function injectGlobal(strings: TemplateStringsArray, ...interpolations: SimpleInterpolation[]): void;
 export function consolidateStreamedStyles(): void;
-export function isStyledComponent(target: string | Component<object>): boolean;
+export function isStyledComponent(target: string | ReactComponent<object>): boolean;
 
 export const ThemeProvider: ThemeProviderComponent<object>;
 
@@ -108,7 +108,7 @@ interface StyleSheetManagerProps {
   target?: Node;
 }
 
-export class StyleSheetManager extends React.Component<StyleSheetManagerProps, {}> { }
+export class StyleSheetManager extends ReactComponent<StyleSheetManagerProps, {}> { }
 
 export class ServerStyleSheet {
   collectStyles(tree: React.ReactNode): ReactElement<StylesheetComponentProps>;
